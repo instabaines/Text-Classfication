@@ -7,7 +7,7 @@ nltk.download('words')
 import emoji
 import shutil
 words = set(nltk.corpus.words.words())
-path = '/data/'
+
 import numpy as np
 
 
@@ -15,6 +15,8 @@ def preprocess (path):
     for dir_ in os.listdir(path):
         dir_=path+dir_
         extract_text(dir_)
+    extract_tweet_into_text
+    print("Files extracted")
 
 def extract_text(path_to_json):
   data=json.load(open(path_to_json))
@@ -63,3 +65,9 @@ def extract_tweet_into_text(path):
                 destination = os.path.join(target,txt)
                 shutil.copy(source, destination)
                 count=count+1
+def main():
+    pass
+
+if __name__=='__main__':
+    path = '/data/'
+    preprocess (path)
